@@ -1,0 +1,45 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          chmod +x ./ci/*
+          ./ci/install.sh
+
+          
+      - name: Build images
+        run: |
+          # mkdir -p ci/
+          chmod +xw ./ci/*
+          ./ci/build.sh
+
+      # TBD:
+      #- name: Run tests
+      #  run: |
+      #    ./run_tests.sh
+          
+      - name: List files in build directory
+        run: ls -al ./ci/build
+
+      - name: Upload binaries and test reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: binaries-and-reports
+          path: |
+            ./ci/build/**
