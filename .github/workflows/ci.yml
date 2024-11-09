@@ -4,9 +4,15 @@ on:
   push:
     branches:
       - develop
+      - feature/develop/task4
   pull_request:
     branches:
       - develop
+
+permissions:
+  contents: write
+  pages: write
+  actions: read
 
 jobs:
   build:
@@ -43,3 +49,26 @@ jobs:
           name: binaries-and-reports
           path: |
             ./CI/build/**
+  
+  generate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Doxygen
+      run: sudo apt update && sudo apt install doxygen graphviz -y
+
+    - name: Generate Doxygen documentation
+      run: doxygen Doxyfile
+
+    - name: Deploy to GitHub Pages
+      if: success()
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
+        publish_branch: gh-pages
+        force_orphan: true
+      
