@@ -1,0 +1,360 @@
+\hypertarget{namespaceClient}{}\doxysection{Client Namespace Reference}
+\label{namespaceClient}\index{Client@{Client}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceClient_a33c1b570e13ad9ccf1697672c3b5c4b6}{send\+\_\+move\+\_\+to\+\_\+arduino}} (move)
+\begin{DoxyCompactList}\small\item\em Function to send the player\textquotesingle{}s move to the Arduino. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_ac44eecffdafa1e7020e85dd21e21ab95}{play\+\_\+pvp}} ()
+\begin{DoxyCompactList}\small\item\em Function to play Player vs Player mode. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a23b5982aa9bcf97f828a7f43f87cbfa7}{play\+\_\+aivai}} ()
+\begin{DoxyCompactList}\small\item\em Function to play AI vs AI mode. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a93814a470529d4c19d3f2defea976b29}{choose\+\_\+move}} (move)
+\begin{DoxyCompactList}\small\item\em Function to choose a move. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a4366d4ed7b8529113c25cf8ea858999c}{toggle\+\_\+mode}} ()
+\begin{DoxyCompactList}\small\item\em Function to toggle the game mode. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a3d06c9e66f78d3283a7a6886d134b915}{reset\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Function to reset the game. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a4e14cefa008712217743a19617355307}{on\+\_\+closing}} ()
+\begin{DoxyCompactList}\small\item\em Handle window close event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceClient_af0466c99e9e068c9ed9179110fd5f8f6}{SERIAL\+\_\+\+PORT}} = None
+\begin{DoxyCompactList}\small\item\em Define global constants. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceClient_a665e032a47f4526beda8f5312e17d6a8}{BAUD\+\_\+\+RATE}} = 9600
+\item 
+dictionary \mbox{\hyperlink{namespaceClient_a7a07dea03edc7a9dd268d4548051e1bf}{moves}}
+\begin{DoxyCompactList}\small\item\em Dictionary for player moves. \end{DoxyCompactList}\item 
+dictionary \mbox{\hyperlink{namespaceClient_a31c54a4d593d0e304cbbd993b846f82a}{move\+\_\+emoji}}
+\begin{DoxyCompactList}\small\item\em Dictionary for move emojis. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{namespaceClient_aca8348bf6bff229e29853f27d3f6d9b5}{game\+\_\+mode}} = \char`\"{}PvA\char`\"{}
+\begin{DoxyCompactList}\small\item\em Game mode and player moves. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_aecab042d77cef4968d84b5bd887af583}{player1\+\_\+move}} = None
+\item 
+\mbox{\hyperlink{namespaceClient_a65b591199a1f306079ae06a5d645175e}{player2\+\_\+move}} = None
+\item 
+\mbox{\hyperlink{namespaceClient_a5042864707a2844373ca18147f9e2329}{ser}} = serial.\+Serial(\mbox{\hyperlink{namespaceClient_af0466c99e9e068c9ed9179110fd5f8f6}{SERIAL\+\_\+\+PORT}}, \mbox{\hyperlink{namespaceClient_a665e032a47f4526beda8f5312e17d6a8}{BAUD\+\_\+\+RATE}}, timeout=1)
+\begin{DoxyCompactList}\small\item\em Establish serial connection to Arduino. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}} = tk.\+Tk()
+\begin{DoxyCompactList}\small\item\em Error handling if serial connection fails. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_ac573a3f14ae3754b70126b2cd345377b}{instruction\+\_\+label}} = tk.\+Label(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}}, text=\char`\"{}Choose your move\+:\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 14))
+\begin{DoxyCompactList}\small\item\em Label for instructions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_acfb8f5cf447b60c2d856e1572864a5ee}{pady}}
+\item 
+\mbox{\hyperlink{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}{button\+\_\+frame}} = tk.\+Frame(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}})
+\begin{DoxyCompactList}\small\item\em Button frame for choosing moves. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_aebd716c36bfd0d7d7d965eedc3dedc32}{rock\+\_\+button}} = tk.\+Button(\mbox{\hyperlink{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}{button\+\_\+frame}}, text=\char`\"{}Rock ✊\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), width=10, command=lambda\+: \mbox{\hyperlink{namespaceClient_a93814a470529d4c19d3f2defea976b29}{choose\+\_\+move}}(1))
+\begin{DoxyCompactList}\small\item\em Buttons for each move. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_a474eccbf27347922c5761872b1c479d0}{row}}
+\item 
+\mbox{\hyperlink{namespaceClient_aa0ddb3f60c6df1f5be383968370e36c4}{column}}
+\item 
+\mbox{\hyperlink{namespaceClient_a24510dd72dda7ac18eca5f2bb5ba67d3}{padx}}
+\item 
+\mbox{\hyperlink{namespaceClient_ac2c848d35d18ea844e893ce39188c85a}{paper\+\_\+button}} = tk.\+Button(\mbox{\hyperlink{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}{button\+\_\+frame}}, text=\char`\"{}Paper ✋\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), width=10, command=lambda\+: \mbox{\hyperlink{namespaceClient_a93814a470529d4c19d3f2defea976b29}{choose\+\_\+move}}(2))
+\item 
+\mbox{\hyperlink{namespaceClient_a698660194d6de4ccb72d326864403a73}{scissors\+\_\+button}} = tk.\+Button(\mbox{\hyperlink{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}{button\+\_\+frame}}, text=\char`\"{}Scissors ✌️\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), width=10, command=lambda\+: \mbox{\hyperlink{namespaceClient_a93814a470529d4c19d3f2defea976b29}{choose\+\_\+move}}(3))
+\item 
+\mbox{\hyperlink{namespaceClient_ab06717c92f9ec96d6414fd30fd5804e7}{result\+\_\+label}} = tk.\+Label(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}}, text=\char`\"{}Game Result\+:\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 14))
+\begin{DoxyCompactList}\small\item\em Label and text box for game results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_ab58cc756335a6ef4f45de1e537733bd7}{result\+\_\+text}} = tk.\+Text(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}}, height=8, width=40, font=(\char`\"{}Helvetica\char`\"{}, 12))
+\item 
+\mbox{\hyperlink{namespaceClient_a026cb08ee6bf37a998ea90c164a6936f}{state}}
+\item 
+\mbox{\hyperlink{namespaceClient_a888f029979d08fe340ba5c014b64acab}{foreground}}
+\begin{DoxyCompactList}\small\item\em Tag configurations for result display. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_a6bf8fbb404748dd79e5d72b807284c8c}{mode\+\_\+button}} = tk.\+Button(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}}, text=\char`\"{}Mode\+: PvA\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), command=\mbox{\hyperlink{namespaceClient_a4366d4ed7b8529113c25cf8ea858999c}{toggle\+\_\+mode}})
+\begin{DoxyCompactList}\small\item\em Button to toggle game modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceClient_a93814a470529d4c19d3f2defea976b29}\label{namespaceClient_a93814a470529d4c19d3f2defea976b29}} 
+\index{Client@{Client}!choose\_move@{choose\_move}}
+\index{choose\_move@{choose\_move}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{choose\_move()}{choose\_move()}}
+{\footnotesize\ttfamily def Client.\+choose\+\_\+move (\begin{DoxyParamCaption}\item[{}]{move }\end{DoxyParamCaption})}
+
+
+
+Function to choose a move. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & The move chosen by the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceClient_a4e14cefa008712217743a19617355307}\label{namespaceClient_a4e14cefa008712217743a19617355307}} 
+\index{Client@{Client}!on\_closing@{on\_closing}}
+\index{on\_closing@{on\_closing}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{on\_closing()}{on\_closing()}}
+{\footnotesize\ttfamily def Client.\+on\+\_\+closing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handle window close event. 
+
+\mbox{\Hypertarget{namespaceClient_a23b5982aa9bcf97f828a7f43f87cbfa7}\label{namespaceClient_a23b5982aa9bcf97f828a7f43f87cbfa7}} 
+\index{Client@{Client}!play\_aivai@{play\_aivai}}
+\index{play\_aivai@{play\_aivai}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{play\_aivai()}{play\_aivai()}}
+{\footnotesize\ttfamily def Client.\+play\+\_\+aivai (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to play AI vs AI mode. 
+
+\mbox{\Hypertarget{namespaceClient_ac44eecffdafa1e7020e85dd21e21ab95}\label{namespaceClient_ac44eecffdafa1e7020e85dd21e21ab95}} 
+\index{Client@{Client}!play\_pvp@{play\_pvp}}
+\index{play\_pvp@{play\_pvp}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{play\_pvp()}{play\_pvp()}}
+{\footnotesize\ttfamily def Client.\+play\+\_\+pvp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to play Player vs Player mode. 
+
+\mbox{\Hypertarget{namespaceClient_a3d06c9e66f78d3283a7a6886d134b915}\label{namespaceClient_a3d06c9e66f78d3283a7a6886d134b915}} 
+\index{Client@{Client}!reset\_game@{reset\_game}}
+\index{reset\_game@{reset\_game}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{reset\_game()}{reset\_game()}}
+{\footnotesize\ttfamily def Client.\+reset\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to reset the game. 
+
+\mbox{\Hypertarget{namespaceClient_a33c1b570e13ad9ccf1697672c3b5c4b6}\label{namespaceClient_a33c1b570e13ad9ccf1697672c3b5c4b6}} 
+\index{Client@{Client}!send\_move\_to\_arduino@{send\_move\_to\_arduino}}
+\index{send\_move\_to\_arduino@{send\_move\_to\_arduino}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{send\_move\_to\_arduino()}{send\_move\_to\_arduino()}}
+{\footnotesize\ttfamily def Client.\+send\+\_\+move\+\_\+to\+\_\+arduino (\begin{DoxyParamCaption}\item[{}]{move }\end{DoxyParamCaption})}
+
+
+
+Function to send the player\textquotesingle{}s move to the Arduino. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & The move chosen by the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespaceClient_a4366d4ed7b8529113c25cf8ea858999c}\label{namespaceClient_a4366d4ed7b8529113c25cf8ea858999c}} 
+\index{Client@{Client}!toggle\_mode@{toggle\_mode}}
+\index{toggle\_mode@{toggle\_mode}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{toggle\_mode()}{toggle\_mode()}}
+{\footnotesize\ttfamily def Client.\+toggle\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to toggle the game mode. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceClient_a665e032a47f4526beda8f5312e17d6a8}\label{namespaceClient_a665e032a47f4526beda8f5312e17d6a8}} 
+\index{Client@{Client}!BAUD\_RATE@{BAUD\_RATE}}
+\index{BAUD\_RATE@{BAUD\_RATE}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{BAUD\_RATE}{BAUD\_RATE}}
+{\footnotesize\ttfamily int Client.\+BAUD\+\_\+\+RATE = 9600}
+
+\mbox{\Hypertarget{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}\label{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}} 
+\index{Client@{Client}!button\_frame@{button\_frame}}
+\index{button\_frame@{button\_frame}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{button\_frame}{button\_frame}}
+{\footnotesize\ttfamily Client.\+button\+\_\+frame = tk.\+Frame(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}})}
+
+
+
+Button frame for choosing moves. 
+
+\mbox{\Hypertarget{namespaceClient_aa0ddb3f60c6df1f5be383968370e36c4}\label{namespaceClient_aa0ddb3f60c6df1f5be383968370e36c4}} 
+\index{Client@{Client}!column@{column}}
+\index{column@{column}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{column}{column}}
+{\footnotesize\ttfamily Client.\+column}
+
+\mbox{\Hypertarget{namespaceClient_a888f029979d08fe340ba5c014b64acab}\label{namespaceClient_a888f029979d08fe340ba5c014b64acab}} 
+\index{Client@{Client}!foreground@{foreground}}
+\index{foreground@{foreground}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{foreground}{foreground}}
+{\footnotesize\ttfamily Client.\+foreground}
+
+
+
+Tag configurations for result display. 
+
+\mbox{\Hypertarget{namespaceClient_aca8348bf6bff229e29853f27d3f6d9b5}\label{namespaceClient_aca8348bf6bff229e29853f27d3f6d9b5}} 
+\index{Client@{Client}!game\_mode@{game\_mode}}
+\index{game\_mode@{game\_mode}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{game\_mode}{game\_mode}}
+{\footnotesize\ttfamily string Client.\+game\+\_\+mode = \char`\"{}PvA\char`\"{}}
+
+
+
+Game mode and player moves. 
+
+\mbox{\Hypertarget{namespaceClient_ac573a3f14ae3754b70126b2cd345377b}\label{namespaceClient_ac573a3f14ae3754b70126b2cd345377b}} 
+\index{Client@{Client}!instruction\_label@{instruction\_label}}
+\index{instruction\_label@{instruction\_label}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{instruction\_label}{instruction\_label}}
+{\footnotesize\ttfamily Client.\+instruction\+\_\+label = tk.\+Label(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}}, text=\char`\"{}Choose your move\+:\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 14))}
+
+
+
+Label for instructions. 
+
+\mbox{\Hypertarget{namespaceClient_a6bf8fbb404748dd79e5d72b807284c8c}\label{namespaceClient_a6bf8fbb404748dd79e5d72b807284c8c}} 
+\index{Client@{Client}!mode\_button@{mode\_button}}
+\index{mode\_button@{mode\_button}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{mode\_button}{mode\_button}}
+{\footnotesize\ttfamily Client.\+mode\+\_\+button = tk.\+Button(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}}, text=\char`\"{}Mode\+: PvA\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), command=\mbox{\hyperlink{namespaceClient_a4366d4ed7b8529113c25cf8ea858999c}{toggle\+\_\+mode}})}
+
+
+
+Button to toggle game modes. 
+
+\mbox{\Hypertarget{namespaceClient_a31c54a4d593d0e304cbbd993b846f82a}\label{namespaceClient_a31c54a4d593d0e304cbbd993b846f82a}} 
+\index{Client@{Client}!move\_emoji@{move\_emoji}}
+\index{move\_emoji@{move\_emoji}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{move\_emoji}{move\_emoji}}
+{\footnotesize\ttfamily dictionary Client.\+move\+\_\+emoji}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{}
+\DoxyCodeLine{2     \textcolor{stringliteral}{"{}Rock"{}}: \textcolor{stringliteral}{"{}✊"{}},     }
+\DoxyCodeLine{3     \textcolor{stringliteral}{"{}Paper"{}}: \textcolor{stringliteral}{"{}✋"{}},    }
+\DoxyCodeLine{4     \textcolor{stringliteral}{"{}Scissors"{}}: \textcolor{stringliteral}{"{}✌️"{}} }
+\DoxyCodeLine{5 \}}
+
+\end{DoxyCode}
+
+
+Dictionary for move emojis. 
+
+\mbox{\Hypertarget{namespaceClient_a7a07dea03edc7a9dd268d4548051e1bf}\label{namespaceClient_a7a07dea03edc7a9dd268d4548051e1bf}} 
+\index{Client@{Client}!moves@{moves}}
+\index{moves@{moves}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{moves}{moves}}
+{\footnotesize\ttfamily dictionary Client.\+moves}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{}
+\DoxyCodeLine{2     1: \textcolor{stringliteral}{"{}Rock"{}},        }
+\DoxyCodeLine{3     2: \textcolor{stringliteral}{"{}Paper"{}},       }
+\DoxyCodeLine{4     3: \textcolor{stringliteral}{"{}Scissors"{}}     }
+\DoxyCodeLine{5 \}}
+
+\end{DoxyCode}
+
+
+Dictionary for player moves. 
+
+\mbox{\Hypertarget{namespaceClient_a24510dd72dda7ac18eca5f2bb5ba67d3}\label{namespaceClient_a24510dd72dda7ac18eca5f2bb5ba67d3}} 
+\index{Client@{Client}!padx@{padx}}
+\index{padx@{padx}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{padx}{padx}}
+{\footnotesize\ttfamily Client.\+padx}
+
+\mbox{\Hypertarget{namespaceClient_acfb8f5cf447b60c2d856e1572864a5ee}\label{namespaceClient_acfb8f5cf447b60c2d856e1572864a5ee}} 
+\index{Client@{Client}!pady@{pady}}
+\index{pady@{pady}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{pady}{pady}}
+{\footnotesize\ttfamily Client.\+pady}
+
+\mbox{\Hypertarget{namespaceClient_ac2c848d35d18ea844e893ce39188c85a}\label{namespaceClient_ac2c848d35d18ea844e893ce39188c85a}} 
+\index{Client@{Client}!paper\_button@{paper\_button}}
+\index{paper\_button@{paper\_button}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{paper\_button}{paper\_button}}
+{\footnotesize\ttfamily Client.\+paper\+\_\+button = tk.\+Button(\mbox{\hyperlink{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}{button\+\_\+frame}}, text=\char`\"{}Paper ✋\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), width=10, command=lambda\+: \mbox{\hyperlink{namespaceClient_a93814a470529d4c19d3f2defea976b29}{choose\+\_\+move}}(2))}
+
+\mbox{\Hypertarget{namespaceClient_aecab042d77cef4968d84b5bd887af583}\label{namespaceClient_aecab042d77cef4968d84b5bd887af583}} 
+\index{Client@{Client}!player1\_move@{player1\_move}}
+\index{player1\_move@{player1\_move}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{player1\_move}{player1\_move}}
+{\footnotesize\ttfamily Client.\+player1\+\_\+move = None}
+
+\mbox{\Hypertarget{namespaceClient_a65b591199a1f306079ae06a5d645175e}\label{namespaceClient_a65b591199a1f306079ae06a5d645175e}} 
+\index{Client@{Client}!player2\_move@{player2\_move}}
+\index{player2\_move@{player2\_move}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{player2\_move}{player2\_move}}
+{\footnotesize\ttfamily Client.\+player2\+\_\+move = None}
+
+\mbox{\Hypertarget{namespaceClient_ab06717c92f9ec96d6414fd30fd5804e7}\label{namespaceClient_ab06717c92f9ec96d6414fd30fd5804e7}} 
+\index{Client@{Client}!result\_label@{result\_label}}
+\index{result\_label@{result\_label}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{result\_label}{result\_label}}
+{\footnotesize\ttfamily Client.\+result\+\_\+label = tk.\+Label(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}}, text=\char`\"{}Game Result\+:\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 14))}
+
+
+
+Label and text box for game results. 
+
+\mbox{\Hypertarget{namespaceClient_ab58cc756335a6ef4f45de1e537733bd7}\label{namespaceClient_ab58cc756335a6ef4f45de1e537733bd7}} 
+\index{Client@{Client}!result\_text@{result\_text}}
+\index{result\_text@{result\_text}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{result\_text}{result\_text}}
+{\footnotesize\ttfamily Client.\+result\+\_\+text = tk.\+Text(\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{root}}, height=8, width=40, font=(\char`\"{}Helvetica\char`\"{}, 12))}
+
+\mbox{\Hypertarget{namespaceClient_aebd716c36bfd0d7d7d965eedc3dedc32}\label{namespaceClient_aebd716c36bfd0d7d7d965eedc3dedc32}} 
+\index{Client@{Client}!rock\_button@{rock\_button}}
+\index{rock\_button@{rock\_button}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{rock\_button}{rock\_button}}
+{\footnotesize\ttfamily Client.\+rock\+\_\+button = tk.\+Button(\mbox{\hyperlink{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}{button\+\_\+frame}}, text=\char`\"{}Rock ✊\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), width=10, command=lambda\+: \mbox{\hyperlink{namespaceClient_a93814a470529d4c19d3f2defea976b29}{choose\+\_\+move}}(1))}
+
+
+
+Buttons for each move. 
+
+\mbox{\Hypertarget{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}\label{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}} 
+\index{Client@{Client}!root@{root}}
+\index{root@{root}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily Client.\+root = tk.\+Tk()}
+
+
+
+Error handling if serial connection fails. 
+
+Initialize Tkinter window \mbox{\Hypertarget{namespaceClient_a474eccbf27347922c5761872b1c479d0}\label{namespaceClient_a474eccbf27347922c5761872b1c479d0}} 
+\index{Client@{Client}!row@{row}}
+\index{row@{row}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{row}{row}}
+{\footnotesize\ttfamily Client.\+row}
+
+\mbox{\Hypertarget{namespaceClient_a698660194d6de4ccb72d326864403a73}\label{namespaceClient_a698660194d6de4ccb72d326864403a73}} 
+\index{Client@{Client}!scissors\_button@{scissors\_button}}
+\index{scissors\_button@{scissors\_button}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{scissors\_button}{scissors\_button}}
+{\footnotesize\ttfamily Client.\+scissors\+\_\+button = tk.\+Button(\mbox{\hyperlink{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}{button\+\_\+frame}}, text=\char`\"{}Scissors ✌️\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), width=10, command=lambda\+: \mbox{\hyperlink{namespaceClient_a93814a470529d4c19d3f2defea976b29}{choose\+\_\+move}}(3))}
+
+\mbox{\Hypertarget{namespaceClient_a5042864707a2844373ca18147f9e2329}\label{namespaceClient_a5042864707a2844373ca18147f9e2329}} 
+\index{Client@{Client}!ser@{ser}}
+\index{ser@{ser}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{ser}{ser}}
+{\footnotesize\ttfamily Client.\+ser = serial.\+Serial(\mbox{\hyperlink{namespaceClient_af0466c99e9e068c9ed9179110fd5f8f6}{SERIAL\+\_\+\+PORT}}, \mbox{\hyperlink{namespaceClient_a665e032a47f4526beda8f5312e17d6a8}{BAUD\+\_\+\+RATE}}, timeout=1)}
+
+
+
+Establish serial connection to Arduino. 
+
+\mbox{\Hypertarget{namespaceClient_af0466c99e9e068c9ed9179110fd5f8f6}\label{namespaceClient_af0466c99e9e068c9ed9179110fd5f8f6}} 
+\index{Client@{Client}!SERIAL\_PORT@{SERIAL\_PORT}}
+\index{SERIAL\_PORT@{SERIAL\_PORT}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_PORT}{SERIAL\_PORT}}
+{\footnotesize\ttfamily Client.\+SERIAL\+\_\+\+PORT = None}
+
+
+
+Define global constants. 
+
+Main execution.
+
+Prompt for serial port \mbox{\Hypertarget{namespaceClient_a026cb08ee6bf37a998ea90c164a6936f}\label{namespaceClient_a026cb08ee6bf37a998ea90c164a6936f}} 
+\index{Client@{Client}!state@{state}}
+\index{state@{state}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily Client.\+state}
+

@@ -1,0 +1,73 @@
+\hypertarget{Client_8py}{}\doxysection{COMClient/\+Client.py File Reference}
+\label{Client_8py}\index{COMClient/Client.py@{COMClient/Client.py}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceClient}{Client}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceClient_a33c1b570e13ad9ccf1697672c3b5c4b6}{Client.\+send\+\_\+move\+\_\+to\+\_\+arduino}} (move)
+\begin{DoxyCompactList}\small\item\em Function to send the player\textquotesingle{}s move to the Arduino. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_ac44eecffdafa1e7020e85dd21e21ab95}{Client.\+play\+\_\+pvp}} ()
+\begin{DoxyCompactList}\small\item\em Function to play Player vs Player mode. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a23b5982aa9bcf97f828a7f43f87cbfa7}{Client.\+play\+\_\+aivai}} ()
+\begin{DoxyCompactList}\small\item\em Function to play AI vs AI mode. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a93814a470529d4c19d3f2defea976b29}{Client.\+choose\+\_\+move}} (move)
+\begin{DoxyCompactList}\small\item\em Function to choose a move. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a4366d4ed7b8529113c25cf8ea858999c}{Client.\+toggle\+\_\+mode}} ()
+\begin{DoxyCompactList}\small\item\em Function to toggle the game mode. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a3d06c9e66f78d3283a7a6886d134b915}{Client.\+reset\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Function to reset the game. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespaceClient_a4e14cefa008712217743a19617355307}{Client.\+on\+\_\+closing}} ()
+\begin{DoxyCompactList}\small\item\em Handle window close event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceClient_af0466c99e9e068c9ed9179110fd5f8f6}{Client.\+SERIAL\+\_\+\+PORT}} = None
+\begin{DoxyCompactList}\small\item\em Define global constants. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceClient_a665e032a47f4526beda8f5312e17d6a8}{Client.\+BAUD\+\_\+\+RATE}} = 9600
+\item 
+dictionary \mbox{\hyperlink{namespaceClient_a7a07dea03edc7a9dd268d4548051e1bf}{Client.\+moves}}
+\begin{DoxyCompactList}\small\item\em Dictionary for player moves. \end{DoxyCompactList}\item 
+dictionary \mbox{\hyperlink{namespaceClient_a31c54a4d593d0e304cbbd993b846f82a}{Client.\+move\+\_\+emoji}}
+\begin{DoxyCompactList}\small\item\em Dictionary for move emojis. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{namespaceClient_aca8348bf6bff229e29853f27d3f6d9b5}{Client.\+game\+\_\+mode}} = \char`\"{}PvA\char`\"{}
+\begin{DoxyCompactList}\small\item\em Game mode and player moves. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_aecab042d77cef4968d84b5bd887af583}{Client.\+player1\+\_\+move}} = None
+\item 
+\mbox{\hyperlink{namespaceClient_a65b591199a1f306079ae06a5d645175e}{Client.\+player2\+\_\+move}} = None
+\item 
+\mbox{\hyperlink{namespaceClient_a5042864707a2844373ca18147f9e2329}{Client.\+ser}} = serial.\+Serial(SERIAL\+\_\+\+PORT, BAUD\+\_\+\+RATE, timeout=1)
+\begin{DoxyCompactList}\small\item\em Establish serial connection to Arduino. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_a48861db9c30c0edb4b10bb24c3cc0d0b}{Client.\+root}} = tk.\+Tk()
+\begin{DoxyCompactList}\small\item\em Error handling if serial connection fails. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_ac573a3f14ae3754b70126b2cd345377b}{Client.\+instruction\+\_\+label}} = tk.\+Label(root, text=\char`\"{}Choose your move\+:\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 14))
+\begin{DoxyCompactList}\small\item\em Label for instructions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_acfb8f5cf447b60c2d856e1572864a5ee}{Client.\+pady}}
+\item 
+\mbox{\hyperlink{namespaceClient_a04b9222ca47fa869390225be54ac5e6b}{Client.\+button\+\_\+frame}} = tk.\+Frame(root)
+\begin{DoxyCompactList}\small\item\em Button frame for choosing moves. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_aebd716c36bfd0d7d7d965eedc3dedc32}{Client.\+rock\+\_\+button}} = tk.\+Button(button\+\_\+frame, text=\char`\"{}Rock ✊\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), width=10, command=lambda\+: choose\+\_\+move(1))
+\begin{DoxyCompactList}\small\item\em Buttons for each move. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_a474eccbf27347922c5761872b1c479d0}{Client.\+row}}
+\item 
+\mbox{\hyperlink{namespaceClient_aa0ddb3f60c6df1f5be383968370e36c4}{Client.\+column}}
+\item 
+\mbox{\hyperlink{namespaceClient_a24510dd72dda7ac18eca5f2bb5ba67d3}{Client.\+padx}}
+\item 
+\mbox{\hyperlink{namespaceClient_ac2c848d35d18ea844e893ce39188c85a}{Client.\+paper\+\_\+button}} = tk.\+Button(button\+\_\+frame, text=\char`\"{}Paper ✋\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), width=10, command=lambda\+: choose\+\_\+move(2))
+\item 
+\mbox{\hyperlink{namespaceClient_a698660194d6de4ccb72d326864403a73}{Client.\+scissors\+\_\+button}} = tk.\+Button(button\+\_\+frame, text=\char`\"{}Scissors ✌️\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), width=10, command=lambda\+: choose\+\_\+move(3))
+\item 
+\mbox{\hyperlink{namespaceClient_ab06717c92f9ec96d6414fd30fd5804e7}{Client.\+result\+\_\+label}} = tk.\+Label(root, text=\char`\"{}Game Result\+:\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 14))
+\begin{DoxyCompactList}\small\item\em Label and text box for game results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_ab58cc756335a6ef4f45de1e537733bd7}{Client.\+result\+\_\+text}} = tk.\+Text(root, height=8, width=40, font=(\char`\"{}Helvetica\char`\"{}, 12))
+\item 
+\mbox{\hyperlink{namespaceClient_a026cb08ee6bf37a998ea90c164a6936f}{Client.\+state}}
+\item 
+\mbox{\hyperlink{namespaceClient_a888f029979d08fe340ba5c014b64acab}{Client.\+foreground}}
+\begin{DoxyCompactList}\small\item\em Tag configurations for result display. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceClient_a6bf8fbb404748dd79e5d72b807284c8c}{Client.\+mode\+\_\+button}} = tk.\+Button(root, text=\char`\"{}Mode\+: PvA\char`\"{}, font=(\char`\"{}Helvetica\char`\"{}, 12), command=toggle\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Button to toggle game modes. \end{DoxyCompactList}\end{DoxyCompactItemize}

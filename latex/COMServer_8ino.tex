@@ -1,0 +1,118 @@
+\hypertarget{COMServer_8ino}{}\doxysection{COMServer/\+COMServer.ino File Reference}
+\label{COMServer_8ino}\index{COMServer/COMServer.ino@{COMServer/COMServer.ino}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{COMServer_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\begin{DoxyCompactList}\small\item\em Initialize Serial communication and prompt user for input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{COMServer_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\begin{DoxyCompactList}\small\item\em Main game loop where player input is processed. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{COMServer_8ino_ac368393c6052587e3d054550867085f6}{get\+Move\+Name}} (int move)
+\begin{DoxyCompactList}\small\item\em Get the name of the move based on the move identifier. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{COMServer_8ino_ae049c4441e33b1cead56b5270af0dc8d}{get\+Result}} (int player\+Move, int arduino\+Move)
+\begin{DoxyCompactList}\small\item\em Determine the result of the game between the player and Arduino. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{COMServer_8ino_a76129d7cb3a620ebca2502ba1782eb1b}{ROCK}} = 1
+\begin{DoxyCompactList}\small\item\em Constant for Rock move. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{COMServer_8ino_adafba9862d2204b8ea02647657413aaa}{PAPER}} = 2
+\begin{DoxyCompactList}\small\item\em Constant for Paper move. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{COMServer_8ino_ad7dd1a433e0b948156123b604c1e2242}{SCISSORS}} = 3
+\begin{DoxyCompactList}\small\item\em Constant for Scissors move. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{COMServer_8ino_ac368393c6052587e3d054550867085f6}\label{COMServer_8ino_ac368393c6052587e3d054550867085f6}} 
+\index{COMServer.ino@{COMServer.ino}!getMoveName@{getMoveName}}
+\index{getMoveName@{getMoveName}!COMServer.ino@{COMServer.ino}}
+\doxysubsubsection{\texorpdfstring{getMoveName()}{getMoveName()}}
+{\footnotesize\ttfamily String get\+Move\+Name (\begin{DoxyParamCaption}\item[{int}]{move }\end{DoxyParamCaption})}
+
+
+
+Get the name of the move based on the move identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move} & The move identifier (1 for Rock, 2 for Paper, 3 for Scissors). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the name of the move. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{COMServer_8ino_ae049c4441e33b1cead56b5270af0dc8d}\label{COMServer_8ino_ae049c4441e33b1cead56b5270af0dc8d}} 
+\index{COMServer.ino@{COMServer.ino}!getResult@{getResult}}
+\index{getResult@{getResult}!COMServer.ino@{COMServer.ino}}
+\doxysubsubsection{\texorpdfstring{getResult()}{getResult()}}
+{\footnotesize\ttfamily String get\+Result (\begin{DoxyParamCaption}\item[{int}]{player\+Move,  }\item[{int}]{arduino\+Move }\end{DoxyParamCaption})}
+
+
+
+Determine the result of the game between the player and Arduino. 
+
+This function compares the player\textquotesingle{}s move and Arduino\textquotesingle{}s move to determine the result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Move} & The player\textquotesingle{}s move (1 for Rock, 2 for Paper, 3 for Scissors). \\
+\hline
+{\em arduino\+Move} & The Arduino\textquotesingle{}s randomly generated move (1 for Rock, 2 for Paper, 3 for Scissors). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string indicating the result of the game\+: \char`\"{}\+Draw!\char`\"{}, \char`\"{}\+Player Wins!\char`\"{}, or \char`\"{}\+Arduino Wins!\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{COMServer_8ino_afe461d27b9c48d5921c00d521181f12f}\label{COMServer_8ino_afe461d27b9c48d5921c00d521181f12f}} 
+\index{COMServer.ino@{COMServer.ino}!loop@{loop}}
+\index{loop@{loop}!COMServer.ino@{COMServer.ino}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main game loop where player input is processed. 
+
+This function continuously checks for incoming data from the Serial port. When a valid move is entered by the player, the Arduino generates its own move and determines the game result, then sends the moves and the result back to the player via Serial. \mbox{\Hypertarget{COMServer_8ino_a4fc01d736fe50cf5b977f755b675f11d}\label{COMServer_8ino_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{COMServer.ino@{COMServer.ino}!setup@{setup}}
+\index{setup@{setup}!COMServer.ino@{COMServer.ino}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize Serial communication and prompt user for input. 
+
+This function is called once when the Arduino is powered on. It sets up the serial communication and sends a welcome message to the user, prompting them to choose a move (1 for Rock, 2 for Paper, or 3 for Scissors). 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{COMServer_8ino_adafba9862d2204b8ea02647657413aaa}\label{COMServer_8ino_adafba9862d2204b8ea02647657413aaa}} 
+\index{COMServer.ino@{COMServer.ino}!PAPER@{PAPER}}
+\index{PAPER@{PAPER}!COMServer.ino@{COMServer.ino}}
+\doxysubsubsection{\texorpdfstring{PAPER}{PAPER}}
+{\footnotesize\ttfamily const int PAPER = 2}
+
+
+
+Constant for Paper move. 
+
+\mbox{\Hypertarget{COMServer_8ino_a76129d7cb3a620ebca2502ba1782eb1b}\label{COMServer_8ino_a76129d7cb3a620ebca2502ba1782eb1b}} 
+\index{COMServer.ino@{COMServer.ino}!ROCK@{ROCK}}
+\index{ROCK@{ROCK}!COMServer.ino@{COMServer.ino}}
+\doxysubsubsection{\texorpdfstring{ROCK}{ROCK}}
+{\footnotesize\ttfamily const int ROCK = 1}
+
+
+
+Constant for Rock move. 
+
+\mbox{\Hypertarget{COMServer_8ino_ad7dd1a433e0b948156123b604c1e2242}\label{COMServer_8ino_ad7dd1a433e0b948156123b604c1e2242}} 
+\index{COMServer.ino@{COMServer.ino}!SCISSORS@{SCISSORS}}
+\index{SCISSORS@{SCISSORS}!COMServer.ino@{COMServer.ino}}
+\doxysubsubsection{\texorpdfstring{SCISSORS}{SCISSORS}}
+{\footnotesize\ttfamily const int SCISSORS = 3}
+
+
+
+Constant for Scissors move. 
+
